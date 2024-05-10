@@ -31,7 +31,44 @@
 
             <!-- casa -->
             <a-entity id="casa">
+                
+                <!-- Luzes -->
+                <a-entity id="luztreQuartoMenor" position="0 2.5 0">
+                    <a-light id="luzQuartoMenor" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-sphere position="0 0.5 0" radius="0.25" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-sphere>
+                </a-entity>
 
+                <a-entity id="luztreQuartoMaior" position="5 2.5 0">
+                    <a-light id="luzQuartoMaior" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-sphere position="0 0.5 0" radius="0.25" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-sphere>
+                </a-entity>
+
+                <a-entity id="luztreBanheiro" position="1 2.5 -3.5">
+                    <a-light id="luzBanheiro" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-sphere position="0 0.5 0" radius="0.25" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-sphere>
+                </a-entity>
+
+                <a-entity id="luztreCozinha" position="-5 2.5 -5">
+                    <a-light id="luzCozinha" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-sphere position="0 0.5 0" radius="0.25" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-sphere>
+                </a-entity>
+
+                <a-entity id="luztreEntrada" position="-5 2.5 0">
+                    <a-light id="luzEntrada" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-sphere position="0 0.5 0" radius="0.25" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-sphere>
+                </a-entity>
+
+                <a-entity id="luztreJardim" position="8 2.5 3">
+                    <a-light id="luzJardim" type="point" intensity="0" color="#ccc" castShadow="true"></a-light>
+                    <a-plane position="0 0.49 0" height="0.2" width="0.2" rotation="90 0 0" color="#ccc"
+                        material="emissive: #ccc; emissiveIntensity: 0.3"></a-plane>
+                </a-entity>
+                
                 <!-- parede quarto visita -->
                 <a-entity class="parede" position="0 1.5 2.5" rotation="0 0 0">
                     <a-box scale="5 3 0.1" shadow="receive: true" material="src: #brick;
