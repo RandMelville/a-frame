@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <script src="scripts/luzes-eventos.js"></script>
+</head>
+
+<body>
+    <a-scene luzes fog="type: linear; color: #AAA; near: 1; far: 1000;" shadow="type: pcfsoft">
+        <a-light type="ambient" color="#888" intensity="0.2"></a-light>
+
+        <!-- Camera -->
+        <a-entity class="player" id="player" camera jump-ability universal-controls kinematic-body look-controls
+            position="1 4 2">
+        </a-entity>
+
+        <!-- Objetos e imagens -->
+        <a-assets>
+        </a-assets>
+
+    </a-scene>
+</body>
+
+</html>
