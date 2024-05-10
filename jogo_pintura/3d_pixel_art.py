@@ -111,6 +111,11 @@ delete_image_rect = pygame.Rect(400, SCREEN_HEIGHT - 50, 120, 30)
 delete_image_font = pygame.font.Font(None, 20)
 delete_image_text = delete_image_font.render("Delete Image", True, BLACK)
 
+# Botão para desfazer a última forma desenhada
+undo_rect = pygame.Rect(540, SCREEN_HEIGHT - 50, 80, 30)
+undo_font = pygame.font.Font(None, 20)
+undo_text = undo_font.render("Undo", True, BLACK)
+
 # Botões para selecionar formas geométricas 3D
 draw_cube_rect = pygame.Rect(10, SCREEN_HEIGHT - 100, 80, 30)
 draw_cube_font = pygame.font.Font(None, 20)
@@ -125,7 +130,7 @@ drawn_shapes = []
 
 # Variáveis para controle de botões selecionados
 selected_button = None
-button_rects = [clear_rect, color_picker_rect, attach_image_rect, delete_image_rect, draw_cube_rect, draw_sphere_rect]
+button_rects = [clear_rect, color_picker_rect, attach_image_rect, delete_image_rect, draw_cube_rect, draw_sphere_rect, undo_rect]
 
 # Função para desenhar os botões
 def draw_buttons():
@@ -141,6 +146,8 @@ def draw_buttons():
     screen.blit(delete_image_text, (delete_image_rect.centerx - delete_image_text.get_width() // 2, delete_image_rect.centery - delete_image_text.get_height() // 2))
     screen.blit(draw_cube_text, (draw_cube_rect.centerx - draw_cube_text.get_width() // 2, draw_cube_rect.centery - draw_cube_text.get_height() // 2))
     screen.blit(draw_sphere_text, (draw_sphere_rect.centerx - draw_sphere_text.get_width() // 2, draw_sphere_rect.centery - draw_sphere_text.get_height() // 2))
+    screen.blit(undo_text, (undo_rect.centerx - undo_text.get_width() // 2, undo_rect.centery - undo_text.get_height() // 2))
+
 
 # Loop principal
 running = True
@@ -160,28 +167,32 @@ while running:
                         selected_button = rect
                         break
 
-                if clear_rect.collidepoint(event.pos):
-                    grid = [[WHITE for _ in range(GRID_WIDTH)] for _ in range(GRID_HEIGHT)]
-                    drawn_shapes = []
-                elif color_picker_rect.collidepoint(event.pos):
-                    selected_color = pick_color()
-                elif attach_image_rect.collidepoint(event.pos):
-                    attached_image = load_image()
-                elif delete_image_rect.collidepoint(event.pos):
-                    attached_image = None
-                elif draw_cube_rect.collidepoint(event.pos):
-                    selected_shape = "cube"
-                elif draw_sphere_rect.collidepoint(event.pos):
-                    selected_shape = "sphere"
-                else:
-                    drawing = True
-                    pos = get_grid_pos(pygame.mouse.get_pos())
-                    if selected_shape == "cube":
-                        draw_cube(pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, selected_color)
-                        drawn_shapes.append(("cube", pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, selected_color))
-                    elif selected_shape == "sphere":
-                        draw_sphere(pos[0], pos[1], CELL_SIZE, selected_color)
-                        drawn_shapes.append(("sphere", pos[0], pos[1], CELL_SIZE, selected_color))
+                    if clear_rect.collidepoint(event.pos):
+                        grid = [[WHITE for _ in range(GRID_WIDTH)] for _ in range(GRID_HEIGHT)]
+                        drawn_shapes = []
+                    elif color_picker_rect.collidepoint(event.pos):
+                        selected_color = pick_color()
+                    elif attach_image_rect.collidepoint(event.pos):
+                        attached_image = load_image()
+                    elif delete_image_rect.collidepoint(event.pos):
+                        attached_image = None
+                    elif draw_cube_rect.collidepoint(event.pos):
+                        selected_shape = "cube"
+                    elif draw_sphere_rect.collidepoint(event.pos):
+                        selected_shape = "sphere"
+                    elif undo_rect.collidepoint(event.pos):
+                        if drawn_shapes:
+                            drawn_shapes.pop()  # Remova a última forma desenhada
+                    else:
+                        drawing = True
+                        pos = get_grid_pos(pygame.mouse.get_pos())
+                        if selected_shape == "cube":
+                            draw_cube(pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, selected_color)
+                            drawn_shapes.append(("cube", pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, selected_color))
+                        elif selected_shape == "sphere":
+                            draw_sphere(pos[0], pos[1], CELL_SIZE, selected_color)
+                            drawn_shapes.append(("sphere", pos[0], pos[1], CELL_SIZE, selected_color))
+                
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
                 drawing = False
