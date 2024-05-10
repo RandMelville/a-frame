@@ -21,8 +21,32 @@
       <a-assets>
         <a-asset-item id="messageText" src="message.html"></a-asset-item>
       </a-assets>
-      <a-entity hand-tracking-controls="hand: left"></a-entity>
-      <a-entity hand-tracking-controls="hand: right"></a-entity>
+
+      <script>
+        document.addEventListener('keydown', function(event) {
+          var player = document.getElementById('player');
+          var position = player.getAttribute('position');
+    
+          if (event.key === ' ') { // Tecla de espaço (Spacebar)
+            position.y += 0.1; // Mover para cima
+          } else if (event.key === 'Shift') { // Tecla Shift
+            position.y -= 0.1; // Mover para baixo
+          }
+    
+          player.setAttribute('position', position);
+        });
+      </script>
+      
+      <a-entity id="player"
+        camera
+        universal-controls
+        kinematic-body
+        jump-ability="true; jump-height: 1.5"
+        descend-ability="descendSpeed: -1.5"
+        wasd-controls="acceleration: 80"
+        look-controls="pointerLockEnabled: true">
+      </a-entity>
+      
     </a-scene>
   </body>
 </html>
