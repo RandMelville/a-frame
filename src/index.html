@@ -23,13 +23,43 @@
     <a-assets>
       <a-asset-item id="messageText" src="message.html"></a-asset-item>
 
-      <!-- <frames> -->
+      <!-- Quadros Grandes -->
       <a-mixin id="frame1" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/1.jpg);"></a-mixin>
-      <a-mixin id="frame2" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/3.jpg);"></a-mixin>
-      <a-mixin id="frame3" geometry="primitive: plane;" material="src: url(../img/1.jpg);"></a-mixin>
-      <a-mixin id="frame4" geometry="primitive: plane;" material="src: url(../img/3.jpg);"></a-mixin>
-      <a-mixin id="frame5" geometry="primitive: plane;" material="src: url(../img/frame5.jpg);"></a-mixin>
-      <!-- <frames> -->
+      <a-mixin id="frame2" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/2.jpg);"></a-mixin>
+      <a-mixin id="frame3" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/3.jpg);"></a-mixin>
+      <a-mixin id="frame4" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/4.jpg);"></a-mixin>
+      <a-mixin id="frame5" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/5.jpg);"></a-mixin>
+      <a-mixin id="frame6" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/6.jpg);"></a-mixin>
+      <a-mixin id="frame7" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/7.jpEg);"></a-mixin>
+      <a-mixin id="frame8" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/8.jpg);"></a-mixin>
+      <a-mixin id="frame9" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/9.jpg);"></a-mixin>
+      <a-mixin id="frame10" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/10.jpg);"></a-mixin>
+      <a-mixin id="frame11" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/11.JPG);"></a-mixin>
+      <a-mixin id="frame12" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/12.jpg);"></a-mixin>
+      <a-mixin id="frame13" geometry="primitive: plane;width:2;height:2;" material="src: url(../img/frame5.jpg);"></a-mixin>
+      <!-- Quadros Grandes -->
+      
+      
+      
+      
+      <!-- Quadros Pequenos -->
+      <a-mixin id="frame14" geometry="primitive: plane;" material="src: url(../img/1.jpg);"></a-mixin>
+      <a-mixin id="frame15" geometry="primitive: plane;" material="src: url(../img/2.jpg);"></a-mixin>
+      <a-mixin id="frame16" geometry="primitive: plane;" material="src: url(../img/3.jpg);"></a-mixin>
+      <a-mixin id="frame17" geometry="primitive: plane;" material="src: url(../img/4.jpg);"></a-mixin>
+      <a-mixin id="frame18" geometry="primitive: plane;" material="src: url(../img/5.jpg);"></a-mixin>
+      <a-mixin id="frame19" geometry="primitive: plane;" material="src: url(../img/6.jpg);"></a-mixin>
+      <a-mixin id="frame20" geometry="primitive: plane;" material="src: url(../img/7.jpeg);"></a-mixin>
+      <a-mixin id="frame21" geometry="primitive: plane;" material="src: url(../img/8.jpg);"></a-mixin>
+      <a-mixin id="frame22" geometry="primitive: plane;" material="src: url(../img/9.jpg);"></a-mixin>
+      <a-mixin id="frame23" geometry="primitive: plane;" material="src: url(../img/10.jpg);"></a-mixin>
+      <a-mixin id="frame25" geometry="primitive: plane;" material="src: url(../img/11.JPG);"></a-mixin>
+      <a-mixin id="frame26" geometry="primitive: plane;" material="src: url(../img/12.jpg);"></a-mixin>
+      <a-mixin id="frame27" geometry="primitive: plane;" material="src: url(../img/frame5.jpg);"></a-mixin>
+      
+      <!-- Quadros Pequenos -->
+
+
 
       <!-- <Components> -->
       <a-mixin id="back-plane" geometry="primitive: plane;" material="side: back"></a-mixin>
@@ -55,6 +85,9 @@
       <a-mixin id="mezzanine-roofpainting" material="src: url(../img/roofpainting.jpg);repeat:20 10;"></a-mixin>
       <a-mixin id="stairs-painting" material="src: url(../img/carpet.jpg);repeat:20 10;"></a-mixin>
       <!-- <textures> -->
+
+        
+
     </a-assets>
 
 
@@ -77,8 +110,8 @@
       descend-ability="descendSpeed: -1.5" wasd-controls="acceleration: 80" look-controls="pointerLockEnabled: true">
     </a-entity>
 
-    <a-entity id="museum">
-      <a-entity id="light" light="type: ambient; color: black;"></a-entity>
+    <a-entity id="museum" sound="src: url(piano.mp3); autoplay: true" >
+      <a-entity id="light" light="type: ambient; color: light;"></a-entity>
 
       <!--Plataforma Museu-->
       <a-entity id="platform">
@@ -98,7 +131,7 @@
 
 
       <!--Construção do Museu-->
-      <a-entity id="building">
+      <a-entity id="building">  
 
         
         <!--Esqueleto Museu-->
@@ -109,7 +142,7 @@
             <a-entity mixin="back-plane wallpainting1" geometry="width:20;height:6" position="0 0 -0.51">
               <a-entity id="img3" mixin="frame1" material="side: back" position="-7 0 -0.01"></a-entity>
               <a-entity id="img4" mixin="frame2" material="side: back" position="-3 0 -0.01"></a-entity>
-              <a-entity id="img5" mixin="frame3" material="side: back" position="2.5 2 -0.01"></a-entity>
+              <a-entity id="img5" mixin="frame22" material="side: back" position="2.5 2 -0.01"></a-entity>
               <a-entity id="img6" mixin="frame4" material="side: back" position="6.5 2 -0.01"></a-entity>
             </a-entity>
             <a-entity mixin="bricks1 front-plane" geometry="width:20;height:7;" position="0 0.5 0.5">
@@ -122,10 +155,10 @@
           <a-entity id="the-left-side-wall" mixin="box" geometry="height:6;width:20;" rotation="0 90 0"
             position="-14.5 5 0" static-body>
             <a-entity mixin="wallpainting1 front-plane" geometry="width:20;height:6" position="0 0 0.51">
-              <a-entity id="img1" mixin="frame1" position="-7 0 0.01"></a-entity>
-              <a-entity id="img2" mixin="frame2" position="-3 0 0.01"></a-entity>
-              <a-entity id="img7" mixin="frame3" position="3 -1 0.01"></a-entity>
-              <a-entity id="img8" mixin="frame4" position="7 -1 0.01"></a-entity>
+              <a-entity id="img1" mixin="frame2" position="-7 0 0.01"></a-entity>
+              <a-entity id="img2" mixin="frame6" position="-3 0 0.01"></a-entity>
+              <a-entity id="img7" mixin="frame20" position="3 -1 0.01"></a-entity>
+              <a-entity id="img8" mixin="frame8" position="7 -1 0.01"></a-entity>
               <a-entity mixin="frame5" position="2.5 2 0.01"></a-entity>
               <a-entity mixin="frame3" position="6.5 2 0.01"></a-entity>
             </a-entity>
@@ -138,7 +171,7 @@
           </a-entity>
           <a-entity id="the-back-wall" mixin="box" geometry="height:6;width:30;" position="0 5 -9.5" static-body>
             <a-entity mixin="wallpainting1 front-plane" geometry="width:30;height:6" position="0 0 0.5">
-              <a-entity id="img9" mixin="frame3" position="-12.5 -1 0.01"></a-entity>
+              <a-entity id="img9" mixin="frame7" position="-12.5 -1 0.01"></a-entity>
               <a-entity id="img10" mixin="frame4" position="-10.5 -1 0.01"></a-entity>
               <a-entity mixin="frame5" position="-6.25 -1 0.01"></a-entity>
               <a-entity mixin="frame3" position="-4.25 -1 0.01"></a-entity>
@@ -242,7 +275,7 @@
             <a-entity class="the-side-wall" mixin="box wallpainting2" geometry="height:3;width:10;" rotation="0 90 0"
               position="-8.3125 3.5 -5" static-body>
               <a-entity mixin="wallpainting2 front-plane" geometry="width:10;height:3" position="0 0 0.5">
-                <a-entity id="img11" mixin="frame3" position="-1.5 0.5 0.01"></a-entity>
+                <a-entity id="img11" mixin="frame15" position="-1.5 0.5 0.01"></a-entity>
                 <a-entity id="img12" mixin="frame4" position="1.5 0.5 0.01"></a-entity>
               </a-entity>
               <a-entity mixin="wallpainting2 back-plane" geometry="width:10;height:3" position="0 0 -0.5">
@@ -251,7 +284,7 @@
               </a-entity>
               <a-entity mixin="wallpainting3 back-plane" geometry="width:1;height:3" position="-5 0 0"
                 rotation="0 90 0">
-                <a-entity mixin="frame5" geometry="width:1.5;height:1.5" material="side: back"
+                <a-entity mixin="frame12" geometry="width:1.5;height:1.5" material="side: back"
                   position="0 0.5 -0.01"></a-entity>
               </a-entity>
             </a-entity>
@@ -277,7 +310,7 @@
               </a-entity>
               <a-entity mixin="wallpainting3 back-plane" geometry="width:1;height:3" rotation="0 90 0"
                 position="-5 0 0">
-                <a-entity mixin="frame5" geometry="width:1.5;height:1.5" material="side: back"
+                <a-entity mixin="frame23" geometry="width:1.5;height:1.5" material="side: back"
                   position="0 0.5 -0.01"></a-entity>
               </a-entity>
             </a-entity>
@@ -303,7 +336,7 @@
               </a-entity>
               <a-entity mixin="back-plane wallpainting4" geometry="width:1;height:3" rotation="0 90 0"
                 position="-5 0 0">
-                <a-entity mixin="frame5" geometry="width:1.5;height:1.5" material="side: back"
+                <a-entity mixin="frame8" geometry="width:1.5;height:1.5" material="side: back"
                   position="0 0.5 -0.01"></a-entity>
               </a-entity>
             </a-entity>
