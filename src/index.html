@@ -180,12 +180,25 @@
     </a-entity>
     <!--SKELETON-->
           
-          <!--Interio Museu-->
-          <a-entity>
-            
-      
-           
-           </a-entity>
+          <!--Interir Museu-->
+          <a-entity id="mezzanine">
+            <a-entity class="floor">
+              <a-entity mixin="front-plane mezzanine-roofpainting" geometry="width:25.25;height:10" rotation="90 0 0" position="-1.875 5 -5"></a-entity>
+              <a-entity mixin="back-plane mezzanine-floor" geometry="width:25.25;height:10" rotation="90 0 0" position="-1.875 5.01 -5" static-body></a-entity>
+            </a-entity>
+
+            <a-entity class="the-front-window" mixin="window" geometry="primitive:box;height:3;width:25.25;" position="-1.875 6.49 0" static-body></a-entity>
+
+            <a-entity id="stairs">
+              <a-entity mixin="stairs-painting" geometry="primitive:box;height:10;width:3.75;" rotation="90 0 0" position="12.625 2.5 -4.75" first-step static-body></a-entity>
+              <a-entity mixin="stairs-painting" geometry="primitive:box;height:9.333333333333334;width:3.75;" rotation="90 0 0" position="12.625 3 -5.08333333333" static-body></a-entity>
+              <a-entity mixin="stairs-painting" geometry="primitive:box;height:8.666666666666668;width:3.75;" rotation="90 0 0" position="12.625 3.5 -5.41666666667" static-body></a-entity>
+              <a-entity mixin="stairs-painting" geometry="primitive:box;height:8.000000000000002;width:3.75;" rotation="90 0 0" position="12.625 4 -5.75" static-body></a-entity>
+              <a-entity mixin="stairs-painting" geometry="primitive:box;height:7.333333333333335;width:3.75;" rotation="90 0 0" position="12.625 4.52 -6.08333333333" static-body></a-entity>
+            </a-entity>
+         </a-entity>
+         <!--Interir Museu-->
+
       
       
          </a-entity>
