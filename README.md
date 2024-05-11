@@ -49,3 +49,7 @@ Disciplina: Computação Gráfica e Realidade Virtual <br/>
    - Um jogo de pintura 3D onde os usuários podem criar obras de arte virtuais utilizando ferramentas interativas de edição.
 
 ---
+
+Vídeos de entrega:
+
+   - [Grupo 3: Casa Interativa com Controle de Iluminação](https://youtu.be/n9nY7xOmY34)
