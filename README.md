@@ -28,6 +28,9 @@ Disciplina: Computação Gráfica e Realidade Virtual <br/>
 + Grupo 2: Museu de Arte com Galeria Interativa: (Ismael)
 + Grupo 3: Casa Interativa com Controle de Iluminação: (Breno)
 + Grupo 4: Labirinto 3D com Desafios Interativos: (Lucas)
+   
+   Link do video da apresentação Grupo 4: https://youtu.be/cJbK4LrKcRQ
+   
 + Grupo 5: Jogo de Pintura 3D com Ferramentas Interativas: (Antony)
 
 ## Projetos

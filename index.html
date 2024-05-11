@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Maze with Interactive Challenges</title>
+    <script src="libs/aframe.js"></script> <!--Aframe.js(v0.3.0) Library-->
+    <script src="libs/aframe-extras.js"></script> <!--Aframe-extras.js(v2.6.1) Library-->
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+    <a-scene physics="gravity: 0">
+      <a-assets>
+        <img id="wood" src="assets/images/wood.jpg">
+        <img id="sky" src="assets/images/field-sphere.jpg" >
+        <img id="asset_wall" src="assets/images/wall.jpg" >
+        <img id="texto_fim" src="assets/images/texto.png">
+        <audio id="audio" src="assets/audio/Beat_Your_Competition_-_Vibe_Tracks.mp3"></audio>
+      </a-assets>
+
+      <!-- Cenário do labirinto-->
+      <a-sky color="#ECECEC" src="#sky"></a-sky>
+      <a-entity id="maze"></a-entity>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="50" height="50" static-body material="src: #wood; repeat: 50 50"></a-plane>
+
+      <!-- Música de fundo -->
+      <!-- <a-entity sound="src: #audio; autoplay: true; loop: true" position="12.5 0 -10" geometry="primitive: plane" visible="false"></a-entity> -->
+
+      <!-- Configuração do jogador com corpo dinâmico -->
+      <a-entity id="camera" camera universal-controls kinematic-body position="-14 1.6 -2" collision-handler>
+        <a-cursor id="cursor" fuse="false" color="royalblue"></a-cursor>
+        <a-image id="winner" src="#texto_fim" position="0 0 -1" width="1" height="1" visible="false"></a-image>
+      </a-entity>
+
+      <!-- Elemento interativo do desafio -->
+      <!-- Porta -->
+      <a-entity id="challenge" position="12.5 0 -10" rotation="0 -90 0" on-click>
+        <a-box position="0 1 0" width="1" height="2" depth="0.05" color="#7C4D1F"></a-box>
+        <!-- Maçaneta -->
+        <a-cylinder position="0.3 1 0.05" radius="0.05" height="0.01" color="#DDD"></a-cylinder>
+      </a-entity>
+    </a-scene>
+</body>
+</html>
